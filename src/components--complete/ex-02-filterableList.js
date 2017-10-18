@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
 
+const allUsersList = [
+  { user: 'Tomas' , status: 'active'},
+  { user: 'Maria' , status: 'inactive'},
+  { user: 'Maria' , status: 'active'},
+  { user: 'Alejandra' , status: 'active'},
+  { user: 'Carolina' , status: 'active'},
+  { user: 'Romina' , status: 'inactive'},
+  { user: 'Daniela' , status: 'inactive'},
+]
+
 class FilterableList extends Component {
   constructor(){
     super()
@@ -41,15 +51,7 @@ class FilterableList extends Component {
 
   render() {
 
-    let userList = [
-      { user: 'Tomas' , status: 'active'},
-      { user: 'Maria' , status: 'inactive'},
-      { user: 'Maria' , status: 'active'},
-      { user: 'Alejandra' , status: 'active'},
-      { user: 'Carolina' , status: 'active'},
-      { user: 'Romina' , status: 'inactive'},
-      { user: 'Daniela' , status: 'inactive'},
-    ].filter((u)=>{
+    let userList = allUsersList.filter((u)=>{
       if(this.state.visibleUserType === 'all') return true
       if(this.state.visibleUserType === 'active' && u.status === 'active') return true
       if(this.state.visibleUserType === 'inactive' && u.status === 'inactive') return true
@@ -65,7 +67,7 @@ class FilterableList extends Component {
 
           <span onClick={ ()=>{this._handleClick('all') } }>All</span>
           <span className="" onClick={ ()=>{this._handleClick('active') } }>Active</span>
-          <span className="" onClick={ ()=>{this._handleClick ('all')} }>Inactive</span>
+          <span className="" onClick={ ()=>{this._handleClick ('inactive')} }>Inactive</span>
         </aside>
 
 

@@ -26,6 +26,18 @@ class FilterableList extends Component {
 
   _showList(uList){
     let jsxArray = uList.map(function(userObj){
+
+      let userClassValStatus
+      let statusText
+
+      if(userObj.status === 'active'){
+        statusText = 'ACTIVE'
+        userClassValStatus = 'status--active'
+      } else {
+        statusText = 'INACTIVE'
+        userClassValStatus = 'status--inactive'
+      }
+
       return (
         <div className={userClassValStatus}>
           <span>{userObj.user}</span>
@@ -38,9 +50,10 @@ class FilterableList extends Component {
 
   render() {
 
+
     return (
       <main>
-
+        <h3>Filterable List</h3>
         <aside>
           <h4>
             Currently showing: <mark>{this.state.visibleUserType}</mark>
