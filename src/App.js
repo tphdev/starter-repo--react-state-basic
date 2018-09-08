@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import ShowHide from './components--complete/ex-01-showHide';
-import FilterableList from './components--complete/ex-02-filterableList';
+import ShowHide from './components/showHide';
 
 class App extends Component {
   render() {
     return (
       <div id="app-container">
-        <h1>React State</h1>
+        <h1>React State - Basics</h1>
         <ShowHide/>
-        <hr/>
-        <FilterableList/>
       </div>
     );
   }

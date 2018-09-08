@@ -33,13 +33,20 @@ button{
   cursor: pointer;
 }
 
-p {
+.my-opinion {
   font-size: 18px;
   line-height: 2;
   background: lightyellow;
   padding: 10px;
 }
 
+.my-opinion--hidden{
+  display: none;
+}
+
+.my-opinion--visible{
+  display: block;
+}
 
 main {
   display: flex;
